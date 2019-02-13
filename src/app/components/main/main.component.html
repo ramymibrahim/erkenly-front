@@ -1,0 +1,55 @@
+<h2>{{companyName}}</h2>
+<button (click)="logout()">Logout</button>
+
+<select [(ngModel)]="branch">
+    <option *ngFor="let b of branches" value="{{b.id}}">{{b.id}}</option>
+</select>
+<div class="row">
+    <div class="col-md-6">
+        <button class="btn-primary" (click)="editPrice()">Edit Price</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn-primary" (click)="editHours()">Edit Working Hours</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn-primary" (click)="editCapacity()">Edit Capacity</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn-primary" (click)="addBranch()" (saved)="added()">Add Branch</button>
+    </div>
+</div>
+<div id="editPriceModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <app-edit field="price" [branch_id]="branch"></app-edit>
+        </div>
+    </div>
+</div>
+
+
+<div id="editHoursModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <app-edit field="hours" [branch_id]="branch"></app-edit>
+        </div>
+    </div>
+</div>
+
+
+<div id="editCapacityModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <app-edit field="capacity" [branch_id]="branch"></app-edit>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="addBranchModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <app-add-branch></app-add-branch>
+        </div>
+    </div>
+</div>

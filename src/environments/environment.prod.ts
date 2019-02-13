@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL:'http://www.vdis-eg.com/erkenly/api/'
+  apiURL:'http://localhost:8000/api/'
 };
